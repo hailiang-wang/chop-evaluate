@@ -41,9 +41,13 @@ def evaluate(input, output):
             input_lines.append(x)
     
     for x in trange(len(input_lines)):
-        print("seg: %s" % input_lines[x])
-        output_lines.append(' '.join(T.cut(input_lines[x])) + '\n')
-        print("done.")
+        # print("seg: %s" % input_lines[x])
+        o = []
+        for y in T.cut(input_lines[x]):
+            if y.strip(): o.append(y.strip())
+        output_lines.append(' '.join(o) + '\n')
+        
+    print("done.")
 
     with open(output, 'w') as fr:
         fr.writelines(output_lines)
