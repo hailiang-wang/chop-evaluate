@@ -7,15 +7,24 @@ source ~/venv-py3/bin/activate
 python chop_seg.py
 ```
 
-## PKU - chop-0.5
+
+## chop-0.8
+
+### hmm: msr_test
+
+score breaks at [trace](./result/chop.hmm.msr_test.utf8.score)
 
 ```
-=== TOTAL TRUE WORDS RECALL:	0.789
-=== TOTAL TEST WORDS PRECISION:	0.844
-=== F MEASURE:	0.815
-=== OOV Rate:	0.058
-=== OOV Recall Rate:	0.540
-=== IV Recall Rate:	0.804
+Warning: No output in test data where there is in training data, line 176
+Illegal division by zero at icwb2-data/scripts/score line 152.
+
+```
+
+### mmseg: msr_test
+
+```
+=== TOTAL TRUE WORDS RECALL:	0.811
+=== TOTAL TEST WORDS PRECISION:	0.847
 ```
 
 ## 对比
@@ -23,3 +32,4 @@ python chop_seg.py
 ![](./assets/pr1.png)
 
 [中文分词工具测评](http://rsarxiv.github.io/2016/11/29/%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E5%B7%A5%E5%85%B7%E6%B5%8B%E8%AF%84/)
+

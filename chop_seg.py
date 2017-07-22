@@ -30,10 +30,13 @@ sys.path.append(curdir)
 from tqdm import trange
 import chop
 
-T = chop.Tokenizer(dict_path=os.path.join(chop.__path__[0], 'dict.txt'))
+from chop.hmm import Tokenizer as HMMTokenizer
+from chop.mmseg import Tokenizer as MMSEGTokenizer
 
+HT = HMMTokenizer()
+MT = MMSEGTokenizer()
 
-def evaluate(input, output):
+def evaluate(tokenizer, input, output):
     output_lines = []
     input_lines = []
     with open(input, 'r') as f:
@@ -43,7 +46,7 @@ def evaluate(input, output):
     for x in trange(len(input_lines)):
         # print("seg: %s" % input_lines[x])
         o = []
-        for y in T.cut(input_lines[x]):
+        for y in tokenizer.cut(input_lines[x]):
             if y.strip(): o.append(y.strip())
         output_lines.append(' '.join(o) + '\n')
         
@@ -53,7 +56,8 @@ def evaluate(input, output):
         fr.writelines(output_lines)
 
 def main():
-    evaluate('icwb2-data/testing/pku_test.utf8', 'result/chop.pku_test.utf8')
+    evaluate(HT, 'icwb2-data/testing/msr_test.utf8', 'result/chop.hmm.msr_test.utf8')
+    evaluate(MT, 'icwb2-data/testing/msr_test.utf8', 'result/chop.mmseg.msr_test.utf8')
 
 if __name__ == '__main__':
     main()

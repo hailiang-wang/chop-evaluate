@@ -48,5 +48,14 @@ cd $baseDir/..
 source ~/venv-py3/bin/activate
 # batch_process segment icwb2-data/testing/pku_test.utf8 result/chop.pku_test.utf8
 python chop_seg.py
-perl icwb2-data/scripts/score icwb2-data/gold/pku_training_words.utf8 \
-    icwb2-data/gold/pku_test_gold.utf8 result/chop.pku_test.utf8 > result/chop.pku_test.ut8.score
+perl icwb2-data/scripts/score \
+    icwb2-data/gold/msr_training_words.utf8 \
+    icwb2-data/gold/msr_test_gold.utf8 \
+    result/chop.hmm.msr_test.utf8 \
+    > result/chop.hmm.msr_test.utf8.score
+
+perl icwb2-data/scripts/score \
+    icwb2-data/gold/msr_training_words.utf8 \
+    icwb2-data/gold/msr_test_gold.utf8 \
+    result/chop.mmseg.msr_test.utf8 \
+    > result/chop.mmseg.msr_test.utf8.score
