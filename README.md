@@ -8,16 +8,17 @@ python chop_seg.py
 ```
 
 
-## chop-0.8
+## chop-1.0
 
 ### hmm: msr_test
 
-score breaks at [trace](./result/chop.hmm.msr_test.utf8.score)
-
 ```
-Warning: No output in test data where there is in training data, line 176
-Illegal division by zero at icwb2-data/scripts/score line 152.
-
+=== TOTAL TRUE WORDS RECALL:	0.763
+=== TOTAL TEST WORDS PRECISION:	0.696
+=== F MEASURE:	0.727
+=== OOV Rate:	0.026
+=== OOV Recall Rate:	0.230
+=== IV Recall Rate:	0.777
 ```
 
 ### mmseg: msr_test
@@ -25,6 +26,10 @@ Illegal division by zero at icwb2-data/scripts/score line 152.
 ```
 === TOTAL TRUE WORDS RECALL:	0.811
 === TOTAL TEST WORDS PRECISION:	0.847
+=== F MEASURE:	0.829
+=== OOV Rate:	0.026
+=== OOV Recall Rate:	0.333
+=== IV Recall Rate:	0.824
 ```
 
 ## 对比

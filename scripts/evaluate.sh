@@ -46,7 +46,6 @@ function batch_process(){
 [ -z "${BASH_SOURCE[0]}" -o "${BASH_SOURCE[0]}" = "$0" ] || return
 cd $baseDir/..
 source ~/venv-py3/bin/activate
-# batch_process segment icwb2-data/testing/pku_test.utf8 result/chop.pku_test.utf8
 python chop_seg.py
 perl icwb2-data/scripts/score \
     icwb2-data/gold/msr_training_words.utf8 \
