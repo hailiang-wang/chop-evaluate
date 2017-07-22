@@ -34,7 +34,7 @@ python chop_seg.py
 
 ## 对比
 
-![](./assets/pr1.png)
+![](./assets/pr-msr.png)
 
 [中文分词工具测评](http://rsarxiv.github.io/2016/11/29/%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E5%B7%A5%E5%85%B7%E6%B5%8B%E8%AF%84/)
 
